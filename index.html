@@ -71,7 +71,7 @@
         .particle {
             position: absolute;
             background: rgba(255, 255, 255, 0.1);
-            border-radius:ross: 50%;
+            border-radius: 50%; /* fixed typo */
             animation: float 15s infinite linear;
         }
 
@@ -95,7 +95,7 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width:Meals 1200px;
+            max-width: 1200px; /* fixed typo */
             margin: 0 auto;
             padding: 60px 20px;
         }
@@ -151,6 +151,11 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
         }
 
         .game-card::before {
@@ -361,47 +366,47 @@
         </header>
 
         <div class="games-grid">
-            <div class="game-card">
+            <a href="harmony-puzzle.html" class="game-card">
                 <div class="game-icon">🧩</div>
-                <a href="harmony-puzzle.html" class="game-title">Harmony Puzzle</a>
+                <span class="game-title">Harmony Puzzle</span>
                 <p class="game-description">Create perfect balance by arranging symbols in a soothing, meditative grid experience</p>
-            </div>
+            </a>
             
-            <div class="game-card">
+            <a href="collect-serenity.html" class="game-card">
                 <div class="game-icon">🌸</div>
-                <a href="collect-serenity.html" class="game-title">Collect Serenity</a>
+                <span class="game-title">Collect Serenity</span>
                 <p class="game-description">Guide your spirit along peaceful paths to gather precious moments of pure tranquility</p>
-            </div>
+            </a>
             
-            <div class="game-card">
+            <a href="mindful-breathing.html" class="game-card">
                 <div class="game-icon">🫁</div>
-                <a href="mindful-breathing.html" class="game-title">Mindful Breathing</a>
+                <span class="game-title">Mindful Breathing</span>
                 <p class="game-description">Follow gentle rhythms and visual guides to center yourself and find inner calm</p>
-            </div>
+            </a>
             
-            <div class="game-card">
+            <a href="positive-bubbles.html" class="game-card">
                 <div class="game-icon">💫</div>
-                <a href="positive-bubbles.html" аclass="game-title">Positive Bubbles</a>
+                <span class="game-title">Positive Bubbles</span>
                 <p class="game-description">Pop floating bubbles filled with uplifting affirmations and healing energy</p>
-            </div>
+            </a>
 
-            <div class="game-card">
+            <a href="gratitude-garden.html" class="game-card">
                 <div class="game-icon">🌱</div>
-                <a href="gratitude-garden.html" class="game-title">Gratitude Garden</a>
+                <span class="game-title">Gratitude Garden</span>
                 <p class="game-description">Nurture a garden of gratitude by planting seeds of thankful thoughts</p>
-            </div>
+            </a>
 
-            <div class="game-card">
+            <a href="mindful-maze.html" class="game-card">
                 <div class="game-icon">🌀</div>
-                <a href="mindful-maze.html" class="game-title">Mindful Maze</a>
+                <span class="game-title">Mindful Maze</span>
                 <p class="game-description">Navigate serene paths with calming prompts to stay present and relaxed</p>
-            </div>
+            </a>
 
-            <div class="game-card">
+            <a href="calm-collage.html" class="game-card">
                 <div class="game-icon">🎨</div>
-                <a href="calm-collage.html" class="game-title">Calm Collage</a>
+                <span class="game-title">Calm Collage</span>
                 <p class="game-description">Create a soothing vision board with uplifting images and words</p>
-            </div>
+            </a>
         </div>
     </div>
 
