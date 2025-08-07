@@ -58,13 +58,18 @@
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
-            box-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         canvas {
             background-color: #f5f5f5;
             border: 2px solid #81d4fa;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            touch-action: manipulation;
         }
         #bubble-score {
             font-size: 24px;
@@ -77,6 +82,21 @@
             text-decoration: none;
             color: #0288d1;
             font-size: 18px;
+        }
+        @media (max-width: 500px) {
+            .game-container {
+                padding: 10px;
+                max-width: 98vw;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            #bubble-score {
+                font-size: 18px;
+            }
+            a {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -91,6 +111,14 @@
         let bubbles = [];
         let bubbleScore = 0;
         let canvas, ctx;
+        let intervalId;
+
+        function resizeCanvas() {
+            const container = document.querySelector('.game-container');
+            const size = Math.min(container.offsetWidth, window.innerWidth, 400);
+            canvas.width = size;
+            canvas.height = size;
+        }
 
         function initBubble() {
             canvas = document.getElementById('bubble-canvas');
@@ -99,8 +127,13 @@
             bubbleScore = 0;
             document.getElementById('bubble-score').textContent = `Positive Thoughts: ${bubbleScore}`;
             canvas.addEventListener('click', handleBubbleClick);
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+            });
+            resizeCanvas();
             for (let i = 0; i < 5; i++) createBubble();
-            setInterval(updateBubbles, 50);
+            if (intervalId) clearInterval(intervalId);
+            intervalId = setInterval(updateBubbles, 50);
         }
 
         function createBubble() {
